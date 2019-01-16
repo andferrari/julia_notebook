@@ -14,15 +14,14 @@ RUN ln -fs /opt/julia-*/bin/julia /usr/local/bin/julia
 
 USER $NB_UID
 
-# Add Julia packages
+# Add packages and precompile
  
 RUN julia -e 'import Pkg; Pkg.update()' && \
-    julia -e 'import Pkg; Pkg.add("Plots")' && \
-    julia -e 'import Pkg; Pkg.add("PlotlyJS")' && \
-    julia -e 'import Pkg; Pkg.add("Distributions")' && \
-    julia -e 'import Pkg; Pkg.add("Optim")' && \    
-    julia -e 'import Pkg; Pkg.add("IJulia")' && \
-    julia -e 'using IJulia' && \
+    julia -e 'import Pkg; Pkg.add("Plots"); using Plots' && \
+    julia -e 'import Pkg; Pkg.add("PlotlyJS"); using PlotlyJS' && \
+    julia -e 'import Pkg; Pkg.add("Distributions"); using Distributions' && \
+    julia -e 'import Pkg; Pkg.add("Optim"); using Optim' && \    
+    julia -e 'import Pkg; Pkg.add("IJulia"); using IJulia' && \
     fix-permissions /home/$NB_USER
 
 
