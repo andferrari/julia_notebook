@@ -2,7 +2,7 @@ FROM "jupyter/minimal-notebook"
 
 USER root
 
-ENV JULIA_VERSION=1.0.3
+ENV JULIA_VERSION=1.1.0
 
 RUN mkdir /opt/julia-${JULIA_VERSION} && \
     cd /tmp && \
@@ -20,7 +20,8 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("Plots"); using Plots' && \
     julia -e 'import Pkg; Pkg.add("PlotlyJS"); using PlotlyJS' && \
     julia -e 'import Pkg; Pkg.add("Distributions"); using Distributions' && \
-    julia -e 'import Pkg; Pkg.add("Optim"); using Optim' && \    
+     julia -e 'import Pkg; Pkg.add("Optim"); using Optim' && \  
+    julia -e 'import Pkg; Pkg.add("StatPlots"); using StatPlots' && \    
     julia -e 'import Pkg; Pkg.add("IJulia"); using IJulia' && \
     fix-permissions /home/$NB_USER
 
