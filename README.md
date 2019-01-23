@@ -5,7 +5,7 @@ The image is based on [jupyter/minimal-notebook](https://github.com/jupyter/dock
 Create the image:
 
 ```julia
-docker build --tag julia .
+docker build --tag julia github.com/andferrari/julia_notebook
 ```
 
 Run the container with working folder `~/work`:
