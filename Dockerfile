@@ -21,7 +21,7 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("PlotlyJS"); using PlotlyJS' && \
     julia -e 'import Pkg; Pkg.add("Distributions"); using Distributions' && \
      julia -e 'import Pkg; Pkg.add("Optim"); using Optim' && \  
-    julia -e 'import Pkg; Pkg.add("StatPlots"); using StatPlots' && \    
+    julia -e 'import Pkg; Pkg.add("StatsPlots"); using StatsPlots' && \    
     julia -e 'import Pkg; Pkg.add("IJulia"); using IJulia' && \
     fix-permissions /home/$NB_USER
 
