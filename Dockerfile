@@ -2,7 +2,7 @@ FROM "jupyter/minimal-notebook"
 
 USER root
 
-ENV JULIA_VERSION=1.1.0
+ENV JULIA_VERSION=1.3.1
 
 RUN mkdir /opt/julia-${JULIA_VERSION} && \
     cd /tmp && \
